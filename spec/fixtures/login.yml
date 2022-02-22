@@ -1,0 +1,35 @@
+---
+- title: senha incorreta
+  payload:
+    email: nyc.gui@rozinmaill.com
+    password: '123'
+  code: 401
+  error: Unauthorized
+- title: usuario nao existe
+  payload:
+    email: nyc.gui@maill.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- title: email em branco
+  payload:
+    email: ''
+    password: '123456'
+  code: 412
+  error: required email
+- title: sem o campo email
+  payload:
+    password: '123456'
+  code: 412
+  error: required email
+- title: senha em branco
+  payload:
+    email: nyc.gui@rozinmaill.com
+    password: ''
+  code: 412
+  error: required password
+- title: sem o campo senha
+  payload:
+    email: nyc.gui@rozinmaill.com
+  code: 412
+  error: required password
