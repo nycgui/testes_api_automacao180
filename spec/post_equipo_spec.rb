@@ -8,7 +8,7 @@ describe 'POST /equipos' do
   context 'novo equipamento' do
 
     before(:all) do
-      thumbnail = File.open(File.join(Dir.pwd, 'spec/fixtures/images/kramer.jpg'))
+      thumbnail = File.open(File.join(Dir.pwd, 'spec/fixtures/images/kramer.jpg'), 'rb')
       payload = {
         thumbnail: thumbnail, 
         name: 'Kramer',
