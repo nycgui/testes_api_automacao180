@@ -1,0 +1,19 @@
+---
+- title: tentativa de cadastro sem email
+  payload:
+    name: 'Nyc'
+    password: '123'
+  code: 412
+  error: required email
+- title: tentativa de cadastro sem senha
+  payload:
+    name: 'Nyc'
+    email: nyc.gui@rozinmaill.com
+  code: 412
+  error: required password
+- title: tentativa de cadastro sem nome
+  payload:
+    email: nyc.gui@rozinmaill.com
+    password: '123'
+  code: 412
+  error: required name
