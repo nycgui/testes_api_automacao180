@@ -1,6 +1,6 @@
 describe 'POST /equipos' do
   before(:all) do
-    payload = { email:'nyc.gui@rozinmaill.com', password: '123456' }
+    payload = { email:'nyc@rozinmaill.com', password: '123456' }
     result = Sessions.new.login(payload)
     @user_id = result.parsed_response['_id']
   end
