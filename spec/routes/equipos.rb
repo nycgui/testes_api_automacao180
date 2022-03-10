@@ -38,4 +38,13 @@ class Equipos < BaseApi
     )
   end
 
+  def booking(equipo_id, user_id)
+    self.class.post(
+      "/equipos/#{equipo_id}/bookings",
+      body: {date: Time.now.strftime('%d/%m/%Y')},
+      headers: {
+        'user_id': user_id
+      }
+    )
+  end
 end
