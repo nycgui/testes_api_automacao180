@@ -1,2 +1,4 @@
 gemfile.lock
 mongo.log
+*.html
+*.xml
