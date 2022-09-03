@@ -1,0 +1,24 @@
+require 'digest/md5'
+
+require_relative 'features/support/libs/mongo.rb'
+
+def to_md5(pass)
+  return Digest::MD5.hexdigest(pass)
+end
+
+task :test do
+  puts 'Executando tarefa'
+end
+
+task :local_seeds do
+  CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/local.yml"))
+  users = [
+    {name: 'NycGuiRobozin', email: 'nyc.gui@rozinmaill.com', password: to_md5('123456')},
+    {name: 'GuiRobozin', email: 'gui@rozinmaill.com', password: to_md5('123456')}
+  ]
+
+  MongoDB.new.drop_danger
+  MongoDB.new.insert_users(users)
+
+  sh 'cucumber' #roda o cucumber 
+end
