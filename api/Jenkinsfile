@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage('Hooks') {
             steps {
-                sh 'bundle install'
+                sh 'cd api && bundle install'
             }
         }
         stage('Executando rspec') {
             steps {
-                sh 'rspec'
+                sh 'cd api && rspec'
             }
         }
     }
