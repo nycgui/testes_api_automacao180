@@ -3,6 +3,8 @@ require "capybara"
 require "capybara/cucumber"
 require "faker"
 require "pry"
+require 'selenium-webdriver'
+require 'webdrivers'
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["CONFIG"]}"))
 BROWSER = ENV["BROWSER"]
