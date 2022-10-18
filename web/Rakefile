@@ -14,11 +14,13 @@ task :local_seeds do
   CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/local.yml"))
   users = [
     {name: 'NycGuiRobozin', email: 'nyc.gui@rozinmaill.com', password: to_md5('123456')},
-    {name: 'GuiRobozin', email: 'gui@rozinmaill.com', password: to_md5('123456')}
+    {name: 'Nycollas Teste', email: 'nyc@anunciante.com', password: to_md5('123456')},
+    {name: 'GuiRobozin', email: 'gui@rozinmaill.com', password: to_md5('123456')},
+    {name: 'Nogueira Teste', email: 'nog@locatario.com', password: to_md5('123456')},
+    {name: 'NycollasNogueira', email: 'nycnog@rozinmaill.com', password: to_md5('123456')}
   ]
-
   MongoDB.new.drop_danger
   MongoDB.new.insert_users(users)
 
-  sh 'cucumber' #roda o cucumber 
+  sh 'cucumber' #roda o cucumber
 end
