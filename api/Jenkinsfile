@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+        docker{
+            image 'ruby'
+        }
+    }
+
+    stages {
+        stage('Hooks') {
+            steps {
+                sh 'bundle install'
+            }
+        }
+        stage('Executando rspec') {
+            steps {
+                sh 'rspec'
+            }
+        }
+    }
+}
