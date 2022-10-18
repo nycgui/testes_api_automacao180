@@ -1,5 +1,4 @@
 gemfile.lock
-mongo.log
 *.html
 *.xml
 **/logs
